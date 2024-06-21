@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img slider</title>
+    <style>
+        .nav-arrow{
+            display: inline-block;
+            padding: 5px;
+            background-color: rgba(252, 249, 251, 0.904);
+        }
+        .btn-color{
+            background-color: rgba(233, 121, 190, 0.993);
+            color: #f1eff1;
+            border-radius: 8px;
+        }
+    </style>
+    <script>
+        //var numbar1 = 10;
+        let coust_p = 0;
+        /*const numbar3 = 10;*/
+        const name_p = ["ant.jpg","bird.jpg","cat.jpg","dog.jpg"];
+        name_p[0];
+        console.log(name_p[coust_p]);
+        function forwardPic(){
+            /*name_p.length;*/
+            if(coust_p < name_p.length -1){
+            coust_p = coust_p + 1;
+            
+            }else{
+                coust_p = 0;
+            }
+            console.log("count_p",coust_p);
+            console.log("name_p",name_p[coust_p]);
+            console.log(name_p.length);
+
+            document.getElementById("slider").src = name_p[coust_p]
+            
+        }
+        setInterval(forwardPic, 600);
+    </script>
+</head>
+<body>
+    <div class="nav-arrow">
+        <button class="btn-color">backward</button>
+        <button class="btn-color"onclick="forwardPic()">forward</button>
+    </div>
+    <br>
+    <img id="slider" src="ant.jpg" alt="">
+</body>
+</html>
